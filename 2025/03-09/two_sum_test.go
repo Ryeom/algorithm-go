@@ -90,8 +90,9 @@ func TestTwoSum(t *testing.T) {
 	for _, tt := range tests {
 		got := util.RunWithTimer("TwoSum", twoSum, tt.nums, tt.target).([]int)
 		if !reflect.DeepEqual(got, tt.want) {
-			t.Errorf("twoSum(%v, %d) = %v; want %v", tt.nums, tt.target, got, tt.want)
+			t.Errorf("fail 함수명(%v, %d) = %v; want %v", tt.nums, tt.target, got, tt.want)
+		} else {
+			t.Logf("sucess~! got = %v", got)
 		}
-		t.Logf("got = %v", got)
 	}
 }
